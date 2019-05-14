@@ -1,8 +1,8 @@
-/* 
- * CMS Resource Loader - Not a great name, but that's mostly what this does
+/*
+ * Embed Resource Loader - Not a great name, but that's mostly what this does
  * Copyright 2019 James White
- * <github link here>
- * 0.1.0 - 2019/05/12
+ * https://github.com/jamespatrickwhite/embedresourceloader.js
+ * v0.1.0 - 2019/05/12
  *
  * This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -14,12 +14,12 @@
  * from being used, and re-used, implement a bootstrapping global script that allows page designers to
  * use the embed HTML element to trigger external resource loading into the page.
  * This library processes both existing, as well as later dynamically added, embed elements on the page.
- * 
+ *
  * For Javascript:           <embed src="[url to file]" type="javascript">
  * For Javascript module:    <embed src="[url to file]" type="javascript;module">
  * For Javascript no-module: <embed src="[url to file]" type="javascript:nomodule">
  * For CSS:                  <embed src="[url to file]" type="css">
- * 
+ *
  * To require the browser to not use a cached copy (required for Chrome at times to recognize changed files)
  * Append ";nocache" to the type value: ie:
  * <embed src="[url to file]" type="javascript;nocache">
@@ -34,14 +34,14 @@ function toNoCacheURL(url) {
     return `${url}&__nocache__=${rand}`;
   return `${url}?__nocache__=${rand}`;
 }
-  
+
 function loadJavascriptResource(type, src) {
   const typeModifiers = type.split(';');
   typeModifiers.shift();
-  
+
   if (typeModifiers.includes('nocache'))
     src = toNoCacheURL(src);
-  
+
   const scriptElem = document.createElement('script');
   scriptElem.src = src;
 
