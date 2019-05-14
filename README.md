@@ -15,6 +15,7 @@ you'll use an embed element with the type set accordingly like this
 ```
 <embed type="javascript" src="somefile.js">
 ```
+The loader will process any embed elements already in the page, as well as any embed elements dynamically added after.
 
 ## Javascript
 To load a normal Javascript file
