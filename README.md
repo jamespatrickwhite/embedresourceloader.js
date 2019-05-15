@@ -26,7 +26,7 @@ To load a Javascript ES module:
 ```
 <embed type="javascript;module" src="somemodule.js">
 ```
-To force the browser to not load a potentially stale/changed file, append `";nocache"` to the type value:
+To force the browser to not load a potentially stale/changed file, append `;nocache` to the type value:
 ```
 <embed type="javascript;nocache" src="somefile.js">
 <embed type="javascript;module;nocache" src="somemodule.js">
@@ -37,7 +37,7 @@ To load a CSS file:
 ```
 <embed type="css" src="somefile.css">
 ```
-To force the browser to not load a potentially stale/changed file, append `";nocache"` to the type value:
+To force the browser to not load a potentially stale/changed file, append `;nocache` to the type value:
 ```
 <embed type="css;nocache" src="somefile.css">
 ```
