@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<HTML lang="en">
+<HEAD>
+  <TITLE>Demo</TITLE>
+  <META name="viewport" content="width=device-width, initial-scale=1">
+  <!-- simulate global script loading here -->
+  <SCRIPT type="text/javascript" src="../embedresourceloader.js"></SCRIPT>
+</HEAD>
+<BODY>
+
+<SPAN id="foo">An example span element</SPAN>
+<DIV id="bar">An example div element</DIV>
+
+<embed type="javascript;nocache" src="t0.js" style="display:none;">
+<embed type="javascript;nocache" src="t1.js" style="display:none;">
+
+<embed type="javascript;module;nocache" src="t2m.js" style="display:none;">
+<embed type="javascript;nomodule;nocache" src="t2nm.js" style="display:none;">
+
+<embed type="css;nocache" src="c0.css" style="display:none;">
+<embed type="css;nocache" src="c1.css" style="display:none;">
+
+<SCRIPT type="text/javascript">
+// Illustrate dynamically added elements
+setTimeout(() => {
+  let testElem = document.createElement('embed'); testElem.type = 'javascript;nocache'; testElem.src = 't0.js'; document.body.appendChild(testElem);
+},3000);
+setTimeout(() => {
+  let testElem = document.createElement('embed'); testElem.type = 'javascript;nocache'; testElem.src = 't1.js'; document.body.appendChild(testElem);
+},5000);
+</SCRIPT>
+</BODY>
+</HTML>
